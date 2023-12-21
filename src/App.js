@@ -62,17 +62,19 @@ function App() {
       </Navbar>
       <Container className="d-flex justify-content-center flex-1">
         <div className="d-flex flex-column main-container">
-        {rows.map((item, rowIndex) => (
-            <div key={`${item.length}-${rowIndex}`} className="d-flex flex-row i-row w-100">
-              {item.map((item2, colIndex) => (
-                  <div key={`${item.length}-${item2}-${colIndex}`} onClick={() => onItemClick(rowIndex, colIndex)} className={`item item-${numCol} border border-secondary`}>
-                    {item2 === 'x' || item2 === 'o' ? <Lottie style={{
-                      width: '80%'
-                    }} animationData={getAnimationData(item2)} loop={false} /> : null}
-                  </div>
-              ))}
-            </div>
-          ))}
+          <div className="d-flex justify-content-center align-items-center backdrop item-3">
+          </div>
+          {rows.map((item, rowIndex) => (
+              <div key={`${item.length}-${rowIndex}`} className="d-flex flex-row i-row w-100">
+                {item.map((item2, colIndex) => (
+                    <div key={`${item.length}-${item2}-${colIndex}`} onClick={() => onItemClick(rowIndex, colIndex)} className={`item item-${numCol} border border-secondary`}>
+                      {item2 !== '' ? <Lottie style={{
+                        width: '80%'
+                      }} animationData={getAnimationData(item2)} loop={false} /> : null}
+                    </div>
+                ))}
+              </div>
+            ))}
         </div>
       </Container>
     </div>
