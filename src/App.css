@@ -36,12 +36,13 @@
 }
 
 .backdrop{
-  background-color: grey;
-  opacity: 0.5;
+  background-color: gray;
+  opacity: 0.9;
   position: absolute;
   visibility: hidden;
 }
 
-.backdrop:hover{
+.backdrop.visible{
   visibility: visible;
 }
+
